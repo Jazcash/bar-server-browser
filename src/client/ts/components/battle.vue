@@ -58,10 +58,16 @@ export default Vue.extend({
         },
         playerCount: function() {
             const battle = this.battle as Battle;
+            if (!battle.founder.status?.bot) {
+                return battle.players.length - battle.spectators;
+            }
             return battle.players.length - (battle.spectators - 1);
         },
         spectatorCount: function() {
             const battle = this.battle as Battle;
+            if (!battle.founder.status?.bot) {
+                return battle.spectators;
+            }
             return battle.spectators - 1;
         }
     }
