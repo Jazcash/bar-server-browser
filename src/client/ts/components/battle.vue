@@ -20,7 +20,6 @@
                 {{spectatorCount}}
                 <img src="images/spectator.png">
             </div>
-            <!-- <div class="battle__max-players">/ {{battle.maxPlayers}}</div> -->
         </div>
         <div class="battle__players">
             <div class="battle__player" v-for="player in battle.players" v-bind:key="player.userId">

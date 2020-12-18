@@ -35,7 +35,7 @@ html, body {
 
 .battles {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1440px;
     display: flex;
     flex-direction: row;
     padding: 25px;
@@ -154,7 +154,6 @@ html, body {
         align-items: center;
         margin: 2px;
         padding: 2px 6px;
-        //border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 3px;
         & > div {
             margin: 0 2px;
