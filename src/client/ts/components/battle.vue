@@ -24,7 +24,8 @@
         <div class="battle__players">
             <div class="battle__player" v-for="player in battle.players" v-bind:key="player.userId">
                 <div class="battle__flag">
-                    <img :src="'images/flags/' + player.country.toLowerCase() + '.png'">
+                    <img v-if="player.country !== '??'" :src="'images/flags/' + player.country.toLowerCase() + '.png'" alt="">
+                    <img v-else src="images/flags/unknown.png">
                 </div>
                 <div class="battle__rank">
                     <img v-if="player.status" :src="'images/ranks/' + (player.status.rank + 1) + '.png'">

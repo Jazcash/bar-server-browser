@@ -16,21 +16,10 @@ html, body {
 }
 
 .banner{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    img {
-        max-height: 70px;
-        margin-top: 35px;
-    }
-    &__subtext {
-        display: flex;
-        text-align: center;
-        letter-spacing: 3px;
-        font-weight: 400;
-        text-transform: uppercase;
-        margin-left: 2px;
-    }
+    margin: 10px 0;
+    font-size: 68px;
+    font-weight: 700;
+    text-align: center;
 }
 
 .battles {
