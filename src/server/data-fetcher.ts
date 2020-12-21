@@ -20,7 +20,7 @@ export class DataFetcher {
 
     constructor(config: DataFetcherConfig) {
         this.config = Object.assign({}, defaultDataFetcherConfig, config);
-        this.slpClient = new SpringLobbyProtocolClient({ verbose: false });
+        this.slpClient = new SpringLobbyProtocolClient({ verbose: true });
     }
 
     public async listen() {
