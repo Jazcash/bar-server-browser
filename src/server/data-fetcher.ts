@@ -20,12 +20,16 @@ export class DataFetcher {
 
     constructor(config: DataFetcherConfig) {
         this.config = Object.assign({}, defaultDataFetcherConfig, config);
-        this.slpClient = new SpringLobbyProtocolClient({ verbose: true });
+        this.slpClient = new SpringLobbyProtocolClient({ 
+            verbose: true,
+            host: this.config.slp_host,
+            port: this.config.slp_port,
+            username: this.config.username,
+            password: this.config.password
+        });
     }
 
     public async listen() {
-        await this.slpClient.connect(this.config.slp_host, this.config.slp_port);
-
         this.slpClient.onResponse("ADDUSER").add(data => {
             this.players[data.userName] = {
                 username: data.userName,
@@ -97,11 +101,7 @@ export class DataFetcher {
             delete battle.players[player.username];
         });
 
-        const loginResponse = await this.slpClient.login(this.config.username, this.config.password);
-        if (!loginResponse.success) {
-            console.log(loginResponse.error);
-            return;
-        }
+        await this.slpClient.connect();
     }
 
     public getActiveBattles() : Battle[] {

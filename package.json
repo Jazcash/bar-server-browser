@@ -14,6 +14,7 @@
     "license": "ISC",
     "dependencies": {
         "iframe-resizer": "^4.2.11",
+        "sluts": "^2.0.0",
         "vue": "^2.6.12",
         "vue-loader": "^15.9.5",
         "vue-template-compiler": "^2.6.12"
@@ -59,7 +60,6 @@
         "react-dom": "^17.0.1",
         "sass": "^1.29.0",
         "sass-loader": "^10.0.2",
-        "sluts": "^1.5.0",
         "style-loader": "^1.2.1",
         "ts-interface-builder": "^0.2.3",
         "ts-interface-checker": "^0.1.13",
